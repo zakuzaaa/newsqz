@@ -271,4 +271,48 @@ body {
 
 body > .footer {
     margin-top: auto;
+
+}
+/* Адаптивность */
+@media (max-width: 992px) {
+    /* Переключаем главную сетку и блок новостей в одну колонку */
+    .news-block .container-fluid,
+    .main-block .container-fluid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Рекламный блок теперь будет под новостями, а не сбоку */
+    .adv-block {
+        margin-top: 20px;
+    }
+
+    /* Карточки новостей: делаем картинку сверху, текст снизу */
+    .news-block__card {
+        grid-template-columns: 1fr;
+    }
+
+    /* Скругляем углы у картинок и контента сверху/снизу, а не сбоку */
+    .news-block__img {
+        border-radius: 30px 30px 0 0;
+        height: 200px; /* Немного уменьшим высоту на мобильных */
+    }
+
+    .news-block__content {
+        border-radius: 0 0 30px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Уменьшаем заголовки и отступы для совсем маленьких экранов */
+    .news-block h4, .adv-block h3 {
+        font-size: 24px;
+    }
+
+    .rounded-img {
+        height: 250px; /* Уменьшаем баннер, чтобы не занимал весь экран */
+    }
+
+    form button {
+        width: 100%; /* Кнопка формы на всю ширину */
+    }
 }
